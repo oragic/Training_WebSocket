@@ -1,20 +1,16 @@
-import express, { json } from "express"
+import express from "express"
 
 //o js reconhece o index automaticamente
 import "./database"
+import { routes } from "./routes"
 
 const app = express()
 
+app.use(express.json())
+
+app.use(routes)
+
 const port = 3000
-
-
-app.get('/', (req, res) =>{
-    res.json({message: 'olaaa'})
-})
-
-app.post('/', (req, res) =>{
-    return res.json({ message: ' Usuário' })
-})
 
 
 app.listen(port, () =>{
