@@ -1,18 +1,8 @@
-import express from "express"
+import { http } from "./http"
+import "./websocket/client"
 
-//o js reconhece o index automaticamente
-import "./database"
-import { routes } from "./routes"
+const port = 3333
 
-const app = express()
-
-app.use(express.json())
-
-app.use(routes)
-
-const port = 3000
-
-
-app.listen(port, () =>{
-    console.log("Server runing in port 3000")
+http.listen(port, () =>{
+    console.log("Server runing in port 3333")
 })
