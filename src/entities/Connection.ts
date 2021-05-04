@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid"
 import {User} from "./User"
 
 
-@Entity()
+@Entity("connections")
 class Connection{
 
     @PrimaryColumn()
@@ -26,7 +26,7 @@ class Connection{
     created_at:Date;
 
     @UpdateDateColumn()
-    updated_at:Date;
+    update_at:Date;
 
     constructor(){
         if(!this.id){

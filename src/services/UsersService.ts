@@ -8,6 +8,11 @@ class UsersService{
         this.userRepository = getCustomRepository(UserRepository)
     }
 
+    async findByEmail(email: string) {
+        const user = await this.userRepository.findOne({ email });
+        return user;
+    }
+
     async create(email:string){
 
          
